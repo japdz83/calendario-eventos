@@ -133,8 +133,12 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
         // console.log(nuevaNota)
     }
 
+    const notaObj = {
+        note: ''
+    }
+
     function datosNota(e) {
-        // console.log(e.target.value);
+        console.log(e.target.value);
         notaObj[e.target.name] = e.target.value;
     }
 
