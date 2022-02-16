@@ -1,0 +1,134 @@
+body {
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+ol, ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-size: 2rem !important;
+    color: #000 !important;
+    
+}
+
+.clearfix::after,
+.calendar ol::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* ================
+Calendar Styling */
+.calendar {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.5)
+}
+
+.month {
+    font-size: 2rem;
+    color: #000;
+}
+.month .year{
+    font-size: 2rem;
+    color: #000;
+}
+.day-names{
+    background-color: #000;
+}
+.day-names li{
+    text-align: center;
+    color: #fff !important;
+    padding: 5px 0px;
+}
+
+@media (min-width: 992px) {
+    .month {
+        font-size: 3.5rem;
+    }
+}
+
+    .calendar ol li {
+    float: left;
+    width: 14.28571%;
+    }
+
+    .calendar .day-names {
+    border-bottom: 1px solid #eee;
+    }
+
+    .calendar .day-names li {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    }
+
+    .calendar .days li {
+    text-align: right;
+    border: 1px solid #eeeeee;
+    padding: 2px;
+    min-height: 8rem;
+    cursor: pointer;
+    }
+
+    .calendar .days li .date {
+    margin: 0.5rem 0;
+    }
+
+    .calendar .days li .event {
+    font-size: 0.75rem;
+    padding: 0.4rem;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 4rem;
+    margin-bottom: 1px;
+    }
+
+    .calendar .days li .event.span-2 {
+    width: 200%;
+    }
+
+    .calendar .days li .event.begin {
+    border-radius: 1rem 0 0 1rem;
+    }
+
+    .calendar .days li .event.end {
+    border-radius: 0 1rem 1rem 0;
+    }
+
+    .calendar .days li .event.clear {
+    background: none;
+    }
+
+    .calendar .days li:nth-child(n+29) {
+    border-bottom: none;
+    }
+
+    .calendar .days li.outside .date {
+    color: #ddd;
+    }
+
+    .arrows{
+        color: #fff;
+    }
+    .calendar__last-days {
+        opacity: .3; 
+    }
+    .calendar__today {
+        background: rgba(0, 155, 211, .3);
+        color: #000;
+    }
+
+    /*  ============================ * * * ==============================  */
+
+        

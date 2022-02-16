@@ -1,13 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario de Eventos</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+
 </head>
 <body>
     
-    
+    <div class="container py-5">
+
+        <!--=========================== INICIA Calendar ===========================-->
+        <div class="calendar bg-white p-5">
+            <div class="calendar__info d-flex align-items-center justify-content-between">
+                <div class="month-year ">
+                    <h2 class="calendar__month month font-weight-bold mb-0 text-uppercase" id="month">February</h2>
+                    <h2 class="calendar__year year font-weight-bold mb-0 text-uppercase" id="year">2022</h2>
+                </div>
+                <div class="btn-container">
+                    <button class="calendar__prev btn btn-dark" id="prev-month"> < </button>
+                    <button class="calendar__next btn btn-dark" id="next-month"> > </button>
+                </div>
+            </div>
+        
+            <ol class="calendar__week day-names list-unstyled">
+                <li class="calendar__day calendar__item font-weight-bold text-uppercase">Mon</li>
+                <li class="calendar__day calendar__item font-weight-bold text-uppercase">Tue</li>
+                <li class="calendar__day calendar__item font-weight-bold text-uppercase">Wed</li>
+                <li class="calendar__day calendar__item font-weight-bold text-uppercase">Thu</li>
+                <li class="calendar__day calendar__item font-weight-bold text-uppercase">Fri</li>
+                <li class="calendar__day calendar__item font-weight-bold text-uppercase">Sat</li>
+                <li class="calendar__day calendar__item font-weight-bold text-uppercase">Sun</li>
+            </ol>
+
+            <ol class="days list-unstyled">
+                <div class="calendar__dates" id="dates">
+                    
+                </div>
+            </ol>
+        
+            <div class="calendar__dates" id="dates">
+                <div class="contenedor-nota"></div>
+            </div>
+        </div>
+        <!--=========================== FIN Calendar ===========================-->
+
+        <!--=========================== INICIA Modal ===========================-->
+        
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Note</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formulario">
+                        <div class="mb-3">
+                            <label for="note" class="col-form-label">Note:</label>
+                            <input type="text" name="note" class="form-control" id="note" placeholder="Note">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" >Eliminar</button>
+                    <button class="btn btn-info text-white" >Editar</button>
+                    <button type="submit" class="btn btn-primary" >Save</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!--=========================== FIN Modal ===========================-->
+
+    </div>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>
