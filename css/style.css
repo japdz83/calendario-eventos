@@ -1,6 +1,8 @@
 body {
     height: 100vh;
-    background-color: #f2f2f2;
+    display: flex;
+    margin-top: 50px;
+    background-color: #e1e1e1;
 }
 ol, ul, li{
     margin: 0;
@@ -15,121 +17,262 @@ a {
 h1, h2, h3, h4, h5, h6{
     font-size: 2rem !important;
     color: #000 !important;
-    
+
 }
 .clearfix::after,
 .calendar ol::after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
 }
 
 /* ================
 Calendar Styling */
 .calendar {
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,.5)
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,.5)
+}
+.day {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    width: 14.28571%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .month {
-    font-size: 2rem;
-    color: #000;
+font-size: 2rem;
+color: #000;
 }
 .month .year{
-    font-size: 2rem;
-    color: #000;
+font-size: 2rem;
+color: #000;
 }
 .day-names{
-    background-color: #000;
+background-color: #000;
 }
 .day-names li{
-    text-align: center;
-    color: #fff !important;
-    padding: 5px 0px;
+text-align: center;
+color: #fff !important;
+padding: 5px 0px;
 }
 
 @media (min-width: 992px) {
-    .month {
-        font-size: 3.5rem;
-    }
+.month {
+    font-size: 3.5rem;
+}
 }
 
-    .calendar ol li {
-    float: left;
-    width: 14.28571%;
-    }
-
-    .calendar .day-names {
-    border-bottom: 1px solid #eee;
-    }
-
-    .calendar .day-names li {
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    }
-
-    .calendar .days li {
-    text-align: right;
-    border: 1px solid #eeeeee;
-    padding: 2px;
-    min-height: 8rem;
+.calendar ol li {
+float: left;
+width: 14.28571%;
+}
+/* .day {
+    width: 100%;
+    height: 100px;
     cursor: pointer;
-    }
+    width: 14.28571%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
 
-    .calendar .days li .date {
-    margin: 0.5rem 0;
-    }
+.calendar .day-names {
+border-bottom: 1px solid #eee;
+}
 
-    .calendar .days li .event {
-    font-size: 0.75rem;
-    padding: 0.4rem;
+.calendar .day-names li {
+text-transform: uppercase;
+margin-bottom: 0.5rem;
+}
+
+.calendar .days li {
+text-align: right;
+border: 1px solid #eeeeee;
+padding: 2px;
+min-height: 8rem;
+cursor: pointer;
+}
+
+.calendar .days li .date {
+margin: 0.5rem 0;
+}
+
+.calendar .days li .event {
+font-size: 0.75rem;
+padding: 0.4rem;
+color: white;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+border-radius: 4rem;
+margin-bottom: 1px;
+}
+
+.calendar .days li .event.span-2 {
+width: 200%;
+}
+
+.calendar .days li .event.begin {
+border-radius: 1rem 0 0 1rem;
+}
+
+.calendar .days li .event.end {
+border-radius: 0 1rem 1rem 0;
+}
+
+.calendar .days li .event.clear {
+background: none;
+}
+
+.calendar .days li:nth-child(n+29) {
+border-bottom: none;
+}
+
+.calendar .days li.outside .date {
+color: #ddd;
+}
+
+.arrows{
+    color: #fff;
+}
+.calendar__last-days {
+    opacity: .3; 
+}
+.calendar__today {
+    background: rgba(0, 155, 211, .3);
+    color: #000;
+}
+
+/*  ============================ * * * ==============================  */
+    button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
     color: white;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border-radius: 4rem;
-    margin-bottom: 1px;
     }
-
-    .calendar .days li .event.span-2 {
-    width: 200%;
-    }
-
-    .calendar .days li .event.begin {
-    border-radius: 1rem 0 0 1rem;
-    }
-
-    .calendar .days li .event.end {
-    border-radius: 0 1rem 1rem 0;
-    }
-
-    .calendar .days li .event.clear {
-    background: none;
-    }
-
-    .calendar .days li:nth-child(n+29) {
-    border-bottom: none;
-    }
-
-    .calendar .days li.outside .date {
-    color: #ddd;
-    }
-
-    .arrows{
-        color: #fff;
-    }
-    .calendar__last-days {
-        opacity: .3; 
-    }
-    .calendar__today {
-        background: rgba(0, 155, 211, .3);
-        color: #000;
-    }
-
-    /*  ============================ * * * ==============================  */
-
     
+    #header {
+    padding: 10px;
+    color: #222c25;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    }
+    /* #header button {
+    background-color:#92a1d1;
+    } */
+    #container-calendar {
+    width: 770px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+    /* #weekdays {
+    width: 100%;
+    display: flex;
+    color: #247BA0;
+    }
+    #weekdays div {
+    width: 100px;
+    padding: 10px;
+    }  */
+     #calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    } 
+    .day {
+    width: 14.28571%;
+    height: 150px;
+    padding: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    /* margin: 5px; */
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    .day:hover {
+    background-color: #e8faed;
+    }
+    
+    .day + #currentDay {
+    background-color:#e8f4fa;
+    }
+    .event {
+    font-size: 12px;
+    padding: 5px;
+    background-color: #32ed41;
+    color: white;
+    border-radius: 35px;
+    max-height: 55px;
+    overflow: hidden;
+    }
+    .padding {
+        width: 14.28571%;
+        height: 150px;
+        cursor: default !important;
+        background-color: #FFFCFF !important;
+        box-shadow: none !important;
+    }
+    #newEventModal, #deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 450px;
+    top: 100px;
+    left: calc(50% - 175px);
+    position: absolute;
+    font-family: sans-serif;
+    }
+    #eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+    }
+    #eventTitleInput.error {
+    border: 2px solid red;
+    }
+    /* #cancelButton, #deleteButton {
+    background-color: #d36c6c;
+    }
+    #saveButton, #closeButton {
+    background-color: #92a1d1;
+    } */
+    #eventText {
+    font-size: 14px;
+    }
+    #modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    }
+
+
 
 
